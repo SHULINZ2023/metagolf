@@ -1,0 +1,13 @@
+﻿{
+  "type": "service_account",
+  "project_id": "metagolf-71127",
+  "private_key_id": "0107c3cd45cd242130c0e58e0a86990b56081c8d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCutekoiT6/f91J\nKB2LM3hHr5LqnuhC0QcjYexNLH0lb0n/SMsxlvz5hODtS8sPoi4nOe+D20B5cgyb\n/edhlBJvzejbNf4J5+alAqq8d0O17YsyHdQ52GAHqRlpa+m8+3Ux2vZYNSpU0XFs\nlSHMLF1QiOIRBFDinXdTYOdOEiurdDau2BGUugGnifS1ftHRzpP6yYz0uD/P3MUi\nd5XIt2CEii57NWrwLRkIMxDFY45uHVOTfyNyZAQxZArz1BZGR6pxNDNz8LmYCLzQ\nNqTMEIyroZ0YX2z6s2//bNKXWbVLu59ZOZn130GdkAgiMx5P8c0E8u5MHBmCRIiL\nBlRCryv1AgMBAAECggEAIaySztsbMs5qoK/gd+TZBVooM1wjEMPYwB9e7CYLzgQU\nC2Yksf9z7YUI1HwEHNSJ2EowqeW/2NicaRGogBSJ9C5IOD5BI3gk6r+nmHFVZfKt\n3mBE+ExGABv996WS1PfTqCMX0bsXmGcRGVhqPf/8EWp8xkJic7ddmT7HfnL+o0pN\nyr0lKvMJ1IFm9T1GgkCvEBB0MLHLQylIMqzLTSHttlGvOwFHaNWO0fJr+UEeVfr5\nC5qFk2GYg+YgbUBxXHlBjwU4fkJ/rTykQjtk40agC4/VRstoKIXRXSSPH0qIUZ00\nG2Y9+dXyoQpqgCLEJx523Hi3ov52MHK8R7DTQCunqQKBgQD2Nafar7wGq2zgCqrf\n6Qzh/IPi59yDevxyxA7OyKgtAmSmCg+GXUSoeMEcD4UC+sd0Hah9aK+hAiOCT2ks\nlU/1O7p9tzS3X0fvNomMgve9oMAuw0k1u95HYtIoFD+MqKsNzqgdWrwyFMAbTDvN\nImWcdaw7L/UXMvL9esOinpJgSQKBgQC1qGpV1EiKNN63esQ5LOdNpjl1b4fZUDqy\nkGgZUZi3hhH8K1xKIvebH+3ygglBGziWYhpLTqcJ/1MClm0jzo3dr3ab32Z14JFP\nFbf0iYicqA3Snjbe+LYfejqWffD1wqJdk3+riACAi41lEfguxeH1HAjpCNi913bw\nsibCBDKGTQKBgHMQOFX3cwQa8VLzKVBjdeXXQTu16FR6EakA/3qcRBxk1ezTHtZI\nmGGzrWwTxLHTyYr2oVuapRm2CipIOnrffPK66zj9eeGI4fFlp3rHakhw69/u3DQE\njKkIAfdBH0H5QZe+UMsHMJSnJfCb/AauYJZyV/+BNiWVZgIYcX16ZiYhAoGAHK4h\nU7m3VjKwsxEr58cCIc1LpxHbxeCX09deyBiM3vTI5CJIaOAKbbBl1fLX2TKeBYgp\nlJgvYTGxfmgXhR64YTaxqDxmJdg1uOG58F7CddFGlWkrSprDzkZy942cvIBlOBbw\ngjlvstvVkA59O408doFdmsUtyxM4kRnfaqRVAcUCgYBFysbAnIm9/CNUx4+EpU2W\n+/snbYXQFl6qYUgf+t7J3uar0qROJemxhPNTgYeBnWrl8YymNQr2U7vRDlwts551\nkXK7xkPtlyFqW7N7QL9/3ztqNIrm+9i7tRCcYah172ppwBOKZ+fW1DdP0MErpfeA\n7zoPyiuz+l08NvNWJTRfTA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-hfj81@metagolf-71127.iam.gserviceaccount.com",
+  "client_id": "114089507191966939255",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-hfj81%40metagolf-71127.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

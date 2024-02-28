@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "mymetagolf",
+  "private_key_id": "22e9836bab257a2b8fbe8527d8cb339ffba6c818",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDMMGscgcj/oeTI\niuac+uxEtb+ClCgA19tie4CYt3WQatr2GiyiFKxKvqFJm5YRgIJ2ljEeqdUlgvmh\n7OZDMOAJyTrBj2cTEMIF80atd77+AlQPaJ+uwVdnENsPKlXcuJUmjkSf9xjlPd/v\nN+8+7bcSc9p6o3FHeGCZObZffH5xMX5Aj3VdE8sQiBXQu1bktyorvVABxvmya9t8\nuppV+tHdZ1hr+sSvHF161SGirCfJaSuA8jECdvO8Di1GYMdSXmaZH4k2gi8aLZH7\nc7B7TlCDj44D+pEDkJsM1/M+R1zDBubGmk0mqEtJVnRUh24RIwfkNafKeWihQ5xm\n6alBBarbAgMBAAECggEAIM7gzvudh6bZbfg/gKv3/ZGfBq9L1C2Fbwf9YXcM2UUK\nD0P6YEU7v7tsio6zaKGCP4/3WYAb+C3YyBHv7OOJWUPaKyf2/a28zHGf2Bcm+tpL\nQQ85pRMkujHk+MVVIXoOYQZinrn4Z+ZuuO7/A9ifM0RRL6Zbo7UC/xZc/W+xQ097\n4DzkVd13hzYQ77l2hJsj13w7VUebmHbhAiREhH6DXQwmU0r3oN9xCKkvUTjaZapZ\nuaozomQU3t1sfXfKWRCP3CP4PxGSlcHvTf3+O4QLI0AiN4UyWPlmKfuJdx4Q/7nR\nzzLTi+Oe4uKf+buodWARa8d7zcfESmBxdwQSGYCu0QKBgQDliaZ+VSwP5UDrvBH/\nlORHz0KB5fefT7Wntcv4g2g6RHTZXDX0WqGHi7owuE9t6RcCS2VQyv/YDtISbqkD\n8BgqvAlszb50Z32nUIkbAwd5a7QJyj6QK/1oc/1JkgdwGASkxZtZbnpLFWluX6DA\nLuSFjROqFXuFixA92kOgtojyCwKBgQDjuqfQP5g3VW1WWzgEXVx4W5QSpDBI08FD\ntFPTyJq1GwkhBxMTw8lZxUjp9fE7S8UfbHA+A8dWJW4KEhPygqvMo7Iv3YPT7tk8\nZjjdPXQOHT5wbrsL1KKtKQzzmmzCapKVesyiXX28CdS3LhHIP5PyhxWu/URWw3n3\n9SD0ovD8cQKBgHS9LDsmMDGpY/pAfVriK7PF2kpcXjLdBENWd3Vdx72SoWcGub4b\n9fkM/FXY9zSsDnKxS8bqZ3JIH1kWhMkm6/OYDKcUgJ+NHt/gWsqtILkFKNytymHi\nrY/ZJeGr7jJ5VKtEgPzb7kCPlD55TjVP5BN0K6MeJ+NEVa9PeYOcMkv/AoGBAIYT\naiPgnUTOxf3W3Ocs9HlkKYzEIC1whtPOwp/o9rT0Au7wFFpJpi11StV8WJe5p4g1\ntuu8G8trZBsHw7i/GFj2c71cpPXNJRc7c/VF7iM1MoLNntB7U3+xsI9n9uqMBlt9\nnidl9dYUz6k9tXh5fiiHQcvyDx8qHZBQQSPnHwzxAoGBAOFHEQA4fPxir27Cn0MH\n1EDjWle1D7kFj7ah0FpsDLJeGJ/kujg5dMho8QW15cyelSIfVFZhOg2q0fkyi4xp\nkIfNA84olnRDUvk6B6iITUJjY5zijD2UM/Mr0kA2FZci2O/MTwQc+2c5jGUlGVwV\n5NMZ01EpDh4wbMCUhzZ89d79\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-5jn8l@mymetagolf.iam.gserviceaccount.com",
+  "client_id": "103957438960568921627",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-5jn8l%40mymetagolf.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
