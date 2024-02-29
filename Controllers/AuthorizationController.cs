@@ -65,6 +65,15 @@ namespace GolfApi.Controllers
             }
 
         }
+        [HttpGet("ConnectTest")]
+        [AllowAnonymous]
+        public IActionResult ConnectTest()
+        {            
+            var response = new GolfApi.Model.ResponseModel<string>();
+            _logger.LogInformation("in ConnectTest");
+            response.Value = "Connection successful";
+            return Ok(response);
+        }
         [HttpPost("AuthTest")]
         [Authorize]
         public IActionResult AuthTest()
