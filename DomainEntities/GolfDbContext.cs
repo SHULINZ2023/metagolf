@@ -20,7 +20,8 @@ namespace DomainEntities
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("Server=localhost;Database=MetaGolf;User=root;Password=zsl@Calgary23;",new MySqlServerVersion(new Version(8, 0, 23)));
+                //optionsBuilder.UseMySql("Server=localhost;Database=MetaGolf;User=root;Password=zsl@Calgary23;",new MySqlServerVersion(new Version(8, 0, 23)));
+                optionsBuilder.UseMySql("Server=myfirstmysqlazureshulin.mysql.database.azure.com;Database=metagolf;User=shulinz;Password=root2023.yyc;",new MySqlServerVersion(new Version(8, 0, 23)));
             }
         }
 
