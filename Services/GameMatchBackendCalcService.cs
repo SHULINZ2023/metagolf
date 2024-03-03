@@ -16,30 +16,28 @@ namespace GolfApi.Services
 {
     public class GameMatchBackendCalcService:IJob
     {
-        private readonly IDbContextFactory<GolfDbContext> _contextFactory;
+        private readonly GolfDbContext _DbContext;
         private readonly ILogger<GameManagementService> _logger;
     
-        public GameMatchBackendCalcService(IDbContextFactory<GolfDbContext> contextFactory)
+        public GameMatchBackendCalcService(GolfDbContext DbContext)
         {
-            _contextFactory = contextFactory;
+            _DbContext = DbContext;
             _logger = LoggerFactory.Create(builder => builder.AddConsole())
                        .CreateLogger<GameManagementService>();
         }
 
-        public  async Task Execute(IJobExecutionContext context)
+       public Task Execute(IJobExecutionContext context)
         {
-            await Task.Delay(TimeSpan.FromMinutes(5));
-
+          
             _logger.LogInformation("in ExecuteAsync");
-            using (var _DbContext = _contextFactory.CreateDbContext())
-            { 
+ 
             var scoreCardSubmissionList = _DbContext.ScoreCardSubmissions.ToList();
-
+            _logger.LogInformation("total scorecard number: " + scoreCardSubmissionList.Count());
             foreach(var scorecardSub in scoreCardSubmissionList)
             {
                 //fetch scorecard
                 var gameScorecard = _DbContext.GameMatchScoreCard.Where(e=>e.game_match_score_card_id == scorecardSub.Game_match_score_card_id).FirstOrDefault()?? throw new DataNotFoundException("game score card not found");
-            
+                _logger.LogInformation("processing scorecard: " + scorecardSub.Game_match_score_card_id);
                 //step1: upgrade level if score > 85%
                 if(gameScorecard.score >= 0.85)
                 {
@@ -48,15 +46,23 @@ namespace GolfApi.Services
                     if(golfer.Level_id < 5)
                     {
                         golfer.Level_id += 1;
+                        _logger.LogInformation("golfer :" + golfer.FirstName + "Level upgraded to next level");
                         _DbContext.Users.Update(golfer);
                     }
                 }
-
+                //perfect game quit
+                if(scorecardSub.Game_Type_id == 1)
+                {
+                    _logger.LogInformation("Golf Pefect game complete ");
+                    _DbContext.ScoreCardSubmissions.Remove(scorecardSub);
+                    break;
+                }
                 //step2: mark this match's winner
                 var gameScoreCard_Opponent = _DbContext.GameMatchScoreCard.Where(e=>e.game_milestone_match_id==gameScorecard.game_milestone_match_id && e.golfer_id != gameScorecard.golfer_id).FirstOrDefault() ;
                 if(gameScoreCard_Opponent == null || gameScoreCard_Opponent.status != "complete")
                 {
                     //remove this submission
+                    _logger.LogInformation("Opponent game not complete,quit here");
                     _DbContext.ScoreCardSubmissions.Remove(scorecardSub);
                     break;
                 }
@@ -85,6 +91,7 @@ namespace GolfApi.Services
                     if(milestoneMatch.status != "complete") 
                     {
                         //remove this submission
+                        _logger.LogInformation("not all matched under current milestone complete,quit here");
                         _DbContext.ScoreCardSubmissions.Remove(scorecardSub);
                         break;
                     }
@@ -100,6 +107,7 @@ namespace GolfApi.Services
                 if(milestone.final_indc == 1)
                 {
                     //remove this submission
+                    _logger.LogInformation("this milestone is final here,quit!");
                     _DbContext.ScoreCardSubmissions.Remove(scorecardSub);
                     break;
                 }
@@ -128,7 +136,7 @@ namespace GolfApi.Services
                 //Step4.2 populate GameMilestoneMatch
                 //fetch GameMilestoneMatchT
                 var milestoneMatchTList = _DbContext.GameMilestoneMatchT.Where(e=>e.game_milestoneT_id == milestoneT.game_milestoneT_id).ToList() ?? throw new DataNotFoundException("Game Milestone Match Template not found");
-                
+                _logger.LogInformation("Creating next milestone matches, continue");
                 foreach(var milestoneMatchT in milestoneMatchTList)
                 {
                     //locate golfer_1
@@ -172,10 +180,11 @@ namespace GolfApi.Services
                 //remove this submission
                 _DbContext.ScoreCardSubmissions.Remove(scorecardSub);
               
-                _DbContext.SaveChanges();
+                
 
             }
-            }
+            _DbContext.SaveChanges();
+            return Task.FromResult(true);
         
         }
 
