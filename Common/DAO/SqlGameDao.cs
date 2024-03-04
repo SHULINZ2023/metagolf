@@ -20,6 +20,9 @@ public class SqlGameDao : GameDao
         // Implementation to retrieve a user from a SQL database
         // ...
         var currentdate = DateTime.Now.Date;
+       
+        if(gameTypeId < 4)
+        {
         var query = from Game in _dbcontext.Games 
                     join GameType in _dbcontext.GameTypes
                     on Game.game_type_id equals GameType.game_type_id
@@ -39,7 +42,34 @@ public class SqlGameDao : GameDao
                         //email=User.Email
                     };
                     var result = query.ToList();
-         return result;           
+                    return result;
+        }
+        else
+        {
+             var query = from Game in _dbcontext.Games 
+                    join GameType in _dbcontext.GameTypes
+                    on Game.game_type_id equals GameType.game_type_id
+                    join GameGolfer in _dbcontext.GameGolfers 
+                    on Game.game_id equals GameGolfer.game_id
+                    join User in _dbcontext.Users
+                    on GameGolfer.golfer_id equals User.UserSystemId
+                    where User.Email == email && GameType.game_type_id == gameTypeId 
+                    && Game.status=="approved" && Game.game_date >= currentdate
+                    select new GameListResponse
+                    {
+                        game_id = Game.game_id,
+                        game_name=Game.game_name,
+                        game_date=Game.game_date,
+                        game_type_id = GameType.game_type_id,
+                        game_type_code=GameType.game_type_code,
+                        //email=User.Email
+                    };
+                    var result = query.ToList();
+                    return result;
+
+        }
+                    
+                    
 
     }
 public List<CourseListResponse> GetGolfCourseList()

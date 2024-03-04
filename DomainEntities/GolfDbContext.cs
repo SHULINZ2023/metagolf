@@ -53,6 +53,8 @@ namespace DomainEntities
 
         public DbSet<Common.Entities.GameMatchScoreCard> GameMatchScoreCard {get;set;}
         public DbSet<Common.Entities.GameMatchStroke> GameMatchStroke {get;set;}
+        public DbSet<Common.Entities.JoinOpenTournament> JoinOpenTournaments {get;set;}
+
 
 
       

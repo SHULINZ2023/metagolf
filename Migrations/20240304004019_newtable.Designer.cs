@@ -3,6 +3,7 @@ using System;
 using DomainEntities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GolfApi.Migrations
 {
     [DbContext(typeof(GolfDbContext))]
-    partial class GolfDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240304004019_newtable")]
+    partial class newtable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -799,48 +802,6 @@ namespace GolfApi.Migrations
                     b.HasKey("golf_course_id");
 
                     b.ToTable("GolfCourses");
-                });
-
-            modelBuilder.Entity("Common.Entities.JoinOpenTournament", b =>
-                {
-                    b.Property<long>("join_open_tournament_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("create_time")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("game_date")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<long>("game_id")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("game_type_id")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("golf_course_id")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("golfer_id")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("last_upt_time")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<long>("milestone_id")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("start_half_id")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("status")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("join_open_tournament_id");
-
-                    b.ToTable("JoinOpenTournaments");
                 });
 
             modelBuilder.Entity("Common.Entities.Level", b =>

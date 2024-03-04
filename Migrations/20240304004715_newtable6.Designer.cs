@@ -3,6 +3,7 @@ using System;
 using DomainEntities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GolfApi.Migrations
 {
     [DbContext(typeof(GolfDbContext))]
-    partial class GolfDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240304004715_newtable6")]
+    partial class newtable6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -822,7 +825,7 @@ namespace GolfApi.Migrations
                     b.Property<long>("golf_course_id")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("golfer_id")
+                    b.Property<long>("golf_id")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("last_upt_time")

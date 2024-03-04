@@ -172,7 +172,10 @@ namespace GolfApi.Services
             newGame.game_type_id = request.game_type_id;
             newGame.start_half_id = request.half_course_id;
             newGame.creator=creator;
-            newGame.golfhandle0=creator;
+            if(newGame.game_type_id == 1 || newGame.game_type_id == 2)
+                newGame.golfhandle0=creator;
+            else    
+                newGame.golfhandle0=request.golfhandle0;
             newGame.golfhandle1=request.golfhandle1;
             newGame.golfhandle2=request.golfhandle2;
             newGame.golfhandle3=request.golfhandle3;
@@ -185,7 +188,7 @@ namespace GolfApi.Services
             //populate game_milestone
             //1: retrieve the milestone template
             // determine handlesize
-            var handlesize = 1;
+            var handlesize = 0;
             switch(newGame.game_type_id)
             {
                 case 1:
@@ -195,8 +198,17 @@ namespace GolfApi.Services
                     handlesize =2;
                     break;
                 case 3:
-                    handlesize=4;
-                    break;    
+                    if(newGame.golfhandle0 != "not defined") handlesize += 1;
+                    if(newGame.golfhandle1 != "not defined") handlesize += 1;
+                    if(newGame.golfhandle2 != "not defined") handlesize += 1;
+                    if(newGame.golfhandle3 != "not defined") handlesize += 1;
+                    break;
+                case 4:
+                    if(newGame.golfhandle0 != "not defined") handlesize += 1;
+                    if(newGame.golfhandle1 != "not defined") handlesize += 1;
+                    if(newGame.golfhandle2 != "not defined") handlesize += 1;
+                    if(newGame.golfhandle3 != "not defined") handlesize += 1;
+                    break;        
 
             }
               
@@ -215,7 +227,7 @@ namespace GolfApi.Services
 
             _DbContext.GameMilestone.Add(milestone0);
             //populate GameMilestoneMatch
-            _DbContext.SaveChanges();
+            //_DbContext.SaveChanges();
             //1: retrieve template GameMilestoneMatchT
             var gameMilestoneMatchT = _DbContext.GameMilestoneMatchT.Where(e=>e.game_milestoneT_id==milestone0.game_milestoneT_id).ToList();
             foreach (var matchT in gameMilestoneMatchT)
@@ -268,6 +280,13 @@ namespace GolfApi.Services
 
                 _DbContext.GameMilestoneMatch.Add(gameMatch);
             }
+
+            //for open tournament, populate JoinOpenTournament table for each golfer
+            var joinOpenTournament0 = new JoinOpenTournament()
+            {
+                
+
+            };
             _DbContext.SaveChanges();
             
             return count;
